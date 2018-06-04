@@ -1,7 +1,22 @@
+//Declare Global Vairables
 const homeInventory = localStorage.getItem("homeInventory")
 const inventoryDatabase = JSON.parse(homeInventory)
 const articleElement = document.querySelector("#my-stuff")
+const showItemsButton = document.getElementById("show-items")
+const clearItemsButton = document.getElementById("clear")
 
+//--------------------Functions------------------------//
+const buttonClick = () => {
+    let inputFieldText = document.querySelector("input").value
+    listIterator(inventoryDatabase[inputFieldText])
+}
+
+const clearItems = () => {
+    let sections = document.getElementsByTagName("section")
+    for (let i=0; i<=sections.length; i++){
+        articleElement.removeChild(sections[i])
+    }
+}
 
 const addDomElement = (currentElement) => {
     
@@ -23,5 +38,9 @@ const listIterator = (listDesired) => {
         addDomElement(listDesired[i])
     }
 }
+//----------------------------------------------------//
 
-listIterator(inventoryDatabase["furniture"])
+showItemsButton.addEventListener("click", buttonClick)
+clearItemsButton.addEventListener("click", clearItems)
+
+
