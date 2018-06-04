@@ -1,0 +1,12 @@
+#my-stuff {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70%;
+}
+#my-stuff section {
+    border: 1px solid black;
+    box-shadow: 3px 3px 4px black;
+    margin: 20px;
+    padding: 10px;
+}
