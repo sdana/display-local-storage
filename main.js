@@ -13,9 +13,13 @@ const buttonClick = () => {
 
 const clearItems = () => {
     let sections = document.getElementsByTagName("section")
-    for (let i=0; i<=sections.length; i++){
-        articleElement.removeChild(sections[i])
-    }
+    let arrLength = sections.length
+    for (let i=0; i<arrLength; i++){
+        articleElement.removeChild(sections[0])
+ }
+    // while (articleElement.childNode){
+    //     articleElement.removeChild(firstChild)
+    // }
 }
 
 const addDomElement = (currentElement) => {
